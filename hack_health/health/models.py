@@ -15,7 +15,7 @@ class Person(models.Model):
   contact_number = models.IntegerField(default=-1)
 
   def __str__(self):
-    return name
+    return self.name
 
 class Mood(models.Model):
   mood_id = models.AutoField(primary_key=True)
@@ -35,7 +35,7 @@ class Weather(models.Model):
 
 class Day(models.Model):
   date_id = models.AutoField(primary_key=True)
-  date = models.DateTimeField(default=timezone.now)
+  date = models.DateTimeField(default=timezone.now())
  
   mood_id = models.ForeignKey(Mood)
   weather_id = models.ForeignKey(Weather, default=-1)
