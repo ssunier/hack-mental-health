@@ -1,0 +1,5 @@
+import pywapi
+import jawbone
+
+#http://textbelt.com/ (SMS API, on github)
+
