@@ -1,8 +1,10 @@
-from jawbone.jawbone import Jawbone
+import requests
+#from jawbone.jawbone import Jawbone
 
+response_type=code
 client_id="1QcHq0B_THg"
 client_secret="70534a74b2f62bbfca58dda2b756ccc9787ccf6b"
-redirect_uri="http://www.facebook.com"
+redirect_uri="localhost:8000"
 
 jb=Jawbone(client_id,client_secret,redirect_uri,scope='')
 
@@ -23,7 +25,8 @@ token=jb.access_token(code) #json
 #https://jawbone.com/up/developer/endpoints 
 
 #to get sleep data
-endpoint = nudge/api/v.1.0/sleep response = jb.api_call(access_token, endpoint)
+endpoint = "nudge/api/v.1.0/sleep"
+response = jb.api_call(access_token, endpoint)
 #response is json with status_code(200,400,etc)
 #parse for data if response.status==200
 
