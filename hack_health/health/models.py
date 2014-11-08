@@ -1,9 +1,47 @@
 import datetime
 from django.db import models
 from django.utils import timezone
-#from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth.models import AbstractUser, BaseUserManager, User, UserManager
 
 # Create your models here.
+
+'''
+class MyUserManager(BaseUserManager):
+  def create_user(self, email, password=None):
+      if not email:
+          raise ValueError('Users must have an email address')
+
+      user = self.model(
+          email=MyUserManager.normalize_email(email),
+      )
+
+      user.set_password(password)
+      user.save(using=self._db)
+      return user
+
+  def create_superuser(self, email, password):
+      user = self.create_user(email,
+          password=password,
+      )
+      user.is_admin = True
+      user.save(using=self._db)
+      return user
+'''
+
+class People(User):
+
+  name = models.CharField(max_length=200)
+  phone_number = models.IntegerField()
+
+  contact_name = models.CharField(max_length=200)
+  contact_number = models.IntegerField()
+
+  objects = UserManager()
+
+  USERNAME_FIELD = 'email'
+
+#People._meta.get_field_by_name('email')[0]._unique = True
+#People.REQUIRED_FIELDS.remove('email')
 
 class Person(models.Model):
   person_id = models.AutoField(primary_key=True)
