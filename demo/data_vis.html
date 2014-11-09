@@ -1,0 +1,59 @@
+
+<head>
+  <title>Highcharts test tool - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-compat-git.js'></script>
+  
+	<link href="jquery-ui-1.11.2.custom/jquery-ui.theme.css" rel="stylesheet" type="text/css">
+	<link href="main.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:300,400|Yanone+Kaffeesatz:300' rel='stylesheet' type='text/css'>
+  
+
+
+<script type='text/javascript'>
+
+</script>
+
+</head>
+<body>
+  <div id='wrapper'>
+  	<div id='yaxis'>
+	  <div id = 'yexcercise', class = 'ydat'>Excercise</div>
+		<div id = 'ymood', class = 'ydat'>Mood</div>
+    	<div id = 'ysleep', class = 'ydat'>Sleep</div>
+   	  <div id = 'ybrowse', class = 'ydat'>Web</div>
+  	</div>
+  	<div id = 'xaxis', class='xaxis_class'>
+  		<div id = 'xexcercise', class = 'xdat'>Excercise</div>
+		<div id = 'xmood', class = 'xdat'>Mood</div>
+    	<div id = 'xsleep', class = 'xdat'>Sleep</div>
+    	<div id = 'xbrowse', class = 'xdat'>Web</div>
+  	</div>
+    
+	<div id="predictive" class = 'predictivecontainer'>
+    <p> Sorted from left to right are activities that most benefit your mood to those that negatively impact your mood.</p>
+    	<div id = 'p0', class = 'predictdat'>Poor Sleep</div>
+    	<div id = 'p1', class = 'predictdat'>Good Sleep</div>
+    	<div id = 'p2', class = 'predictdat'>Poor Excercise</div>
+    	<div id = 'p3', class = 'predictdat'>Good Excercise</div>
+    	<div id = 'p4', class = 'predictdat'>Poor Browing</div>
+    	<div id = 'p5', class = 'predictdat'>Good Browsing</div>
+        
+        </div>
+        
+        <div id='right',class='rightnav'>
+    	<div id='syncbutton', class = 'button'>Sync Data</div></p>
+    	<div id='share', class = 'button'>Share</div></p>
+    	<div id='compare', class = 'button'>Compare</div></p></div>
+	<div id="container" class = 'plot'></div>
+</div>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script type='text/javascript' src='script.js'></script>
+  <script type='text/javascript' src='jquery-ui.js'></script>
+  <script src="jquery-ui-1.11.2.custom/external/jquery/jquery.js"></script>
+
+</body>
+
+
+</html>
+

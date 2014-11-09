@@ -40,6 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'health',
     'pywapi'
+    'requests',
+    'requests_oauth2'
 )
 
 MIDDLEWARE_CLASSES = (
