@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/* CSS Document 
+font-family: 'Josefin Slab', serif;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+.plot {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  padding: 5round;
+  top: 40px;
+  background-color: #E6E7E8;
+}
+.dat:hover{
+  cursor:pointer;
+}
+.xdat{
+  position:relative;
+  display:inline-block;
+  width: 100px;
+  height: 30px;
+  border-radius: 4px;
+  position: static;
+  background-color: #42C1C1;
+  color: #FFFFFF;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding: 5px 5px 5px 5px;
+  border: 1px solid #FFFFFF;
+  text-align: center;
+}
+.xdatselect {
+  width: 100px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #D44C9B;
+  color: #FFFFFF;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+  border-width: 1px;
+  border-color: #FFFFFF;
+  position: static;
+}
+.xaxis_class {
+  position: relative;
+  top: 50px;
+  height: 50px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  clear: right;
+  float: left;
+  display: inline;
+}
+#yaxis {
+  position: relative;
+  top: 120px;
+  align-items: center;
+}
+.ydat {
+  width: 100px;
+  height: 30px;
+  border-radius: 4px;
+  position: static;
+  background-color: #42C1C1;
+  color: #FFFFFF;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding:5px 5px 5px 5px;
+  border: 1px solid #FFFFFF;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.ydatselect {
+  width: 100px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #D44C9B;
+  color: #FFFFFF;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding:5px 5px 5px 5px;
+  text-align: center;
+  position: static;
+}
+.predictivecontainer {
+  top:50px;
+  position: relative;
+  border-radius: 8px;
+  background-color: #E6E7E8;
+  padding: 10px 50px 10px 50px;
+  right: auto;
+  font-family: 'Josefin Slab', serif;
+  color: #000000;
+  text-align: center;
+}
+.predictdat {
+  width: 100px;
+  border-radius: 4px;
+  height: 30px;
+  position: relative;
+  background-color: #E6E7E8;
+  color: #FFFFFF;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding: 5px 5px 5px 5px;
+  border: 1px solid #FFFFFF;
+  text-align: center;
+  display: inline-block;
+}
+.button:hover{
+  cursor: pointer;
+}
+.button {
+  background-color: #CED5D5;
+  position:relative;
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+  border: thick solid #E8ECEB;
+  color: #FFFFFF;
+  font-size: large;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  text-align: center;
+}
+.buttonclick {
+  background-color: #67BAEC;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+  border: thick solid #E8ECEB;
+  color: #FFFFFF;
+}
+#button_measure{
+  position: relative;
+  top: 120px;
+  align-items: center;
+}

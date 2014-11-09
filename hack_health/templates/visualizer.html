@@ -1,4 +1,66 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+{% block stylesheets %}
+{{ block.super }}
+  <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:300,400|Yanone+Kaffeesatz:300' rel='stylesheet' type='text/css'>
+  <!--<link href="{%static 'css/jquery-ui.theme.css' %}" rel="stylesheet" type="text/css">-->
+{% endblock %}
+{% block javascript %}
+{{ block.super }}
+  <!--<script type='text/javascript' src='http://code.jquery.com/jquery-compat-git.js'></script>-->
+{% endblock %}
 {% block content %}
-<h1>This is where template stuff will go</h1>
+  <div class='row'>
+    <div class='col-md-2'>
+      <div id='yaxis' class='yaxis_class'>
+        <div id='yexercise' class= 'ydat dat'>Exercise</div>
+        <div id='ymood' class = 'ydat dat'>Mood</div>
+        <div id='ysleep' class='ydat dat'>Sleep</div>
+        <div id='ybrowse' class='ydat dat'>Web</div>
+      </div>
+    </div>
+    <div class='col-md-8'>
+      <div id='container' class='plot'></div>
+    </div>
+    <div class='col-md-2'>
+      <div id='button_measure'>
+        <div id='syncbutton' class='button'>Sync Data</div><br/>
+        <div id='share' class='button'>Share</div><br/>
+        <div id='compare' class='button'>Compare</div><br/>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-2'></div>
+    <div class='col-md-8'>
+      <div id='xaxis' class='xaxis_class'>
+        <div id='xexercise' class='xdat dat'>Exercise</div>
+        <div id='xmood' class='xdat dat'>Mood</div>
+        <div id='xsleep' class='xdat dat'>Sleep</div>
+        <div id='xbrowse' class='xdat dat'>Web</div>
+      </div>
+    </div>
+    <div class='col-md-2'></div>
+  </div>
+  <br/>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div id='predictive' class='predictivecontainer'>
+        <p> Sorted from left to right are activities that most benefit your mood to those that negatively impact your mood.</p>
+        <div class='row'>
+          <div id='p0' class='predictdat dat' rank=''>Poor Sleep</div>
+          <div id='p1' class='predictdat dat' rank=''>Good Sleep</div>
+          <div id='p2' class='predictdat dat' rank=''>Poor Exercise</div>
+          <div id='p3' class='predictdat dat' rank=''>Good Exercise</div>
+          <div id='p4' class='predictdat dat' rank=''>Poor Browsing</div>
+          <div id='p5' class='predictdat dat' rank=''>Good Browsing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../resources/js/highcharts.js"></script>
+  <script type='text/javascript' src='../resources/js/script.js'></script>
+  <script type='text/javascript' src='../resources/js/jquery-ui.js'></script>
+  <script src="../resources/js/jquery.js"></script>
 {% endblock %}
