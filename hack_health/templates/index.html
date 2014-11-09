@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+{% block javascript %}
+  {{ block.super }}
+  <script type="text/javascript" src="../resources/js/raphael-min.js"></script>
+  <script type="text/javascript" src="../resources/js/jquery.moodslider.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    var slider = $('#slider').moodSlider();
+  })
+  </script>
+{% endblock %}
 {% block content %}
   <h1>You have reached the now indexed template page!</h1>
+  <div id="slider"></div>
+
 {% endblock %}

@@ -8,3 +8,7 @@ def index(request):
   template = loader.get_template('index.html')
   context = Context({''})
   return HttpResponse(template.render(context))
+
+def visualizer(request):
+  return HttpResponse('this is where the visualizer stuff will go')
+
