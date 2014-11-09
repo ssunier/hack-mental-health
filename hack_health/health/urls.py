@@ -4,4 +4,5 @@ from health import views
 
 urlpatterns = patterns('',
   url(r'$', views.index, name='index'),
+  url(r'^/mood$', views.mood, name='mood'),
 )

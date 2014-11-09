@@ -1,7 +1,7 @@
 import datetime
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import AbstractUser, BaseUserManager, User, UserManager
+#from django.contrib.auth.models import AbstractUser, BaseUserManager, User, UserManager
 
 # Create your models here.
 
@@ -26,7 +26,6 @@ class MyUserManager(BaseUserManager):
       user.is_admin = True
       user.save(using=self._db)
       return user
-'''
 
 class People(User):
 
@@ -37,8 +36,7 @@ class People(User):
   contact_number = models.IntegerField()
 
   objects = UserManager()
-
-  USERNAME_FIELD = 'email'
+'''
 
 #People._meta.get_field_by_name('email')[0]._unique = True
 #People.REQUIRED_FIELDS.remove('email')
