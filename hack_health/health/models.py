@@ -2,6 +2,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 #from django.core.validators import MinValueValidator, MaxValueValidator
+from django import forms
 
 # Create your models here.
 
@@ -31,7 +32,8 @@ class Weather(models.Model):
   weather = models.CharField(max_length=200)
 
   def __str__(self):
-    return str(self.weather) + " " + str(temperature)
+    return self.weather + ' ' + str(self.temperature)
+
 
 class Day(models.Model):
   date_id = models.AutoField(primary_key=True)
@@ -51,4 +53,7 @@ class Person2Day(models.Model):
 
   def __str__(self):
     return str(person_id) + ': ' + str(date)
+
+class MoodForm(forms.Form):
+  mood_id = forms.IntegerField(('Mood'), required=True)
 

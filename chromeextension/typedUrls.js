@@ -1,42 +1,25 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// Event listner for clicks on links in a browser action popup.
-// Open the link in a new tab of the current window.
-function onAnchorClick(event) {
-  chrome.tabs.create({
-    selected: true,
-    url: event.srcElement.href
-  });
-  return false;
-}
+// Gets epoch time stamp : url visited for the previous day
 
 // Given an array of URLs, build a DOM list of those URLs in the
 // browser action popup.
-function buildPopupDom(divName, data, data2) {
+function buildPopupDom(divName, data, data2, json) {
   var popupDiv = document.getElementById(divName);
+//    popupDiv.textContent = json;
 
-  var ul = document.createElement('ul');
-  popupDiv.appendChild(ul);
+var xhr = new XMLHttpRequest();
+var data = new FormData();
+data.append("data" , json);
 
-  for (var i = 0, ie = data.length; i < ie; ++i) {
-    var a = document.createElement('a');
-    a.href = data[i];
-    a.appendChild(document.createTextNode(data[i]));
-    a.appendChild(document.createTextNode(data2[i]));
-    a.addEventListener('click', onAnchorClick);
-
-    var li = document.createElement('li');
-    li.appendChild(document.createTextNode(data[i]));
-    li.appendChild(document.createTextNode("  <------ "));
-    li.appendChild(document.createTextNode(data2[i]));
-//    li.appendChild(a);
-
-    ul.appendChild(li);
+var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
 
 
-  }
+xhr.open( 'post', '/Users/Joy/Documents/hack-mental-health/hack_health/hack_health/', true );
+
+
+xhr.send(data);
+popupDiv.textContent = 'here';
+//chrome.runtime.getPackageDirectoryEntry(function(DirectoryEntry){    popupDiv.textContent = DirectoryEntry.fullPath;})
+
 }
 
 // Search history to find up to ten links that a user has typed in,
@@ -44,18 +27,17 @@ function buildPopupDom(divName, data, data2) {
 function buildTypedUrlList(divName) {
   // To look for history items visited in the last week,
   // subtract a week of microseconds from the current time.
-  //var microsecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
-  //var oneWeekAgo = (new Date).getTime() - microsecondsPerWeek;
+  var microsecondsPerDay = 1000 * 60 * 60 * 24;
+  var oneDayAgo = (new Date).getTime() - microsecondsPerDay;
 
   // Track the number of callbacks from chrome.history.getVisits()
   // that we expect to get.  When it reaches zero, we have all results.
   var numRequestsOutstanding = 0;
 
-
-
   chrome.history.search({
-      'text': ''              // Return every history item....
-      //'startTime': oneWeekAgo  // that was accessed less than one week ago.
+      'text': '',              // Return every history item....
+      'startTime': oneDayAgo,  // that was accessed less than one week ago.
+      'maxResults':100
     },
     function(historyItems) {
       // For each history item, get details on all visits.
@@ -79,7 +61,9 @@ function buildTypedUrlList(divName) {
 
   // Maps URLs to a count of the number of times the user typed that URL into
   // the omnibox.
-  var urlToCount = [];
+  var datestamps = [];
+  var urls = [];
+  var jsonstring=[];
 
   // Callback for chrome.history.getVisits().  Counts the number of
   // times a user visited a URL by typing the address.
@@ -89,8 +73,10 @@ function buildTypedUrlList(divName) {
       //if (visitItems[i].transition != 'typed') {
       //  continue;
       //}
-
-      urlToCount[url].push(visitItems[i].url);
+      //  var date = new Date(visitItems[i].visitTime);
+      datestamps.push(visitItems[i].visitTime);
+      urls.push(url);
+      jsonstring+=visitItems[i].visitTime + ':' + url + ',';
     }
 
     // If this is the final outstanding call to processVisits(),
@@ -103,23 +89,13 @@ function buildTypedUrlList(divName) {
 
   // This function is called when we have the final list of URls to display.
   var onAllVisitsProcessed = function() {
-    // Get the top scorring urls.
-    urlArray = [];
-    timeArray = [];
-    for (var url in urlToCount) {
-      urlArray.push(url);
-      timeArray.push(urlToCount[url]);
-    }
-
-    // Sort the URLs by the number of times the user typed them.
-    //urlArray.sort(function(a, b) {
-    //  return urlToCount[b] - urlToCount[a];
-    //});
-
-    buildPopupDom(divName, urlArray, timeArray);
+    var json = '{' + jsonstring.slice(0, jsonstring.length-1) + '}';
+    buildPopupDom(divName, datestamps, urls, json);
   };
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   buildTypedUrlList("typedUrl_div");
 });
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
