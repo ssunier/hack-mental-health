@@ -32,7 +32,8 @@ class Weather(models.Model):
   weather = models.CharField(max_length=200)
 
   def __str__(self):
-    return str(self.weather) + " " + str(temperature)
+    return self.weather + ' ' + str(self.temperature)
+
 
 class Day(models.Model):
   date_id = models.AutoField(primary_key=True)
