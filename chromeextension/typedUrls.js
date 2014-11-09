@@ -4,7 +4,21 @@
 // browser action popup.
 function buildPopupDom(divName, data, data2, json) {
   var popupDiv = document.getElementById(divName);
-    popupDiv.textContent = json;
+//    popupDiv.textContent = json;
+
+var xhr = new XMLHttpRequest();
+var data = new FormData();
+data.append("data" , json);
+
+var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+
+
+xhr.open( 'post', '/Users/Joy/Documents/hack-mental-health/hack_health/hack_health/', true );
+
+
+xhr.send(data);
+popupDiv.textContent = 'here';
+//chrome.runtime.getPackageDirectoryEntry(function(DirectoryEntry){    popupDiv.textContent = DirectoryEntry.fullPath;})
 
 }
 
@@ -83,3 +97,5 @@ function buildTypedUrlList(divName) {
 document.addEventListener('DOMContentLoaded', function () {
   buildTypedUrlList("typedUrl_div");
 });
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
