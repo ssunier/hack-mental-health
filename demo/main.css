@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/* CSS Document 
+font-family: 'Josefin Slab', serif;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+.plot {
+	width: 600px;
+	height: 400px;
+	padding: 5round;
+	left: 150px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	position: absolute;
+	top: 40px;
+	background-color: #E6E7E8;
+}
+
+#yexcercise {
+}
+#ymood {
+}
+#ysleep {
+}
+#ybrowse {
+}
+#xexcercise {
+	position: relative;
+	display: inline-block;
+}
+#xmood {
+	position: relative;
+	display: inline-block;
+}
+#xsleep {
+	position: relative;
+	display: inline-block;
+}
+#xbrowse {
+	position: relative;
+	display: inline-block;
+	border-radius: 4px;
+}
+.xaxis_class {
+	position: absolute;
+	top: 470px;
+	left: 220px;
+	height: 50px;
+	width: 600px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	clear: right;
+	float: left;
+	display: inline;
+}
+#yaxis {
+	position: absolute;
+	top: 120px;
+	align-items: center;
+}
+.predictivecontainer {
+	position: absolute;
+	top: 520px;
+	width: 830px;
+	height: 100px;
+	left: 45px;
+	border-radius: 8px;
+	background-color: #E6E7E8;
+	display: inline;
+	padding-top: 10px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	right: auto;
+	font-family: 'Josefin Slab', serif;
+	color: #000000;
+	text-align: center;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+.xdat {
+	width: 100px;
+	height: 20px;
+	border-radius: 4px;
+	position: static;
+	background-color: #42C1C1;
+	color: #FFFFFF;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	border: 1px solid #FFFFFF;
+	text-align: center;
+}
+.ydat {
+	width: 100px;
+	height: 20px;
+	border-radius: 4px;
+	position: static;
+	background-color: #42C1C1;
+	color: #FFFFFF;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	border: 1px solid #FFFFFF;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.xdatselect {
+	width: 100px;
+	height: 20px;
+	border-radius: 4px;
+	background-color: #D44C9B;
+	color: #FFFFFF;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	text-align: center;
+	border-width: 1px;
+	border-color: #FFFFFF;
+	position: static;
+}
+.ydatselect {
+	width: 100px;
+	height: 20px;
+	border-radius: 4px;
+	background-color: #D44C9B;
+	color: #FFFFFF;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	text-align: center;
+	position: static;
+}
+.predictdat {
+	width: 100px;
+	border-radius: 4px;
+	height: 20px;
+	position: static;
+	background-color: #E6E7E8;
+	color: #FFFFFF;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	border: 1px solid #FFFFFF;
+	padding-left: 15px;
+	text-align: center;
+	display: inline-block;
+}
+.button {
+	background-color: #CED5D5;
+	position: absolute;
+	width: 100px;
+	height: 10px;
+	border-radius: 8;
+	border: thick solid #E8ECEB;
+	color: #FFFFFF;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	left: 400px;
+	font-size: large;
+	cursor: pointer;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-align: center;
+}
+.buttonclick {
+	background-color: #67BAEC;
+	position: absolute;
+	width: 100px;
+	height: 15px;
+	border-radius: 8;
+	border: thick solid #E8ECEB;
+	color: #FFFFFF;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	left: 400px;
+}
+#syncbutton {
+	position: absolute;
+	left: 800px;
+	top: 130px;
+}
+#share {
+	position: absolute;
+	left: 800px;
+	top: 180px;
+}
+#compare {
+	position: absolute;
+	left: 800px;
+	top: 230px;
+}
