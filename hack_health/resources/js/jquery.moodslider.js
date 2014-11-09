@@ -56,16 +56,16 @@
   var methods = {
     init: function(options) {
       var width=50;
-      this.css({height: width + 'px', width:'500px', background:'#eee', '-webkit-border-radius':'2em', position:'relative'});
+      this.css({height: width + 'px', width:'100%', background:' #6CB5FF', '-webkit-border-radius':'2em', position:'relative'});
       var smiley = $('<div class="moodslider-smiley"</div>');
       smiley.css({cursor:'pointer', width:width+'px',height:width+'px',position:'absolute'});
       this.append(smiley)
       this.data('smiley', smiley);
 
       var paper = Raphael(smiley[0], width, width);
-      var face = paper.circle(width/2, (width/2-5)).attr("fill", "#fff300").attr("stroke", "#000");
-      var eyeL = paper.circle(width/2 - 8, width/2 - 5, Math.floor(width/15)).attr('fill', '#000');
-      var eyeR = paper.circle(width/2 + 8, width/2 - 5, Math.floor(width/15)).attr('fill', '#000');
+      var face = paper.circle(width/2, (width/2-5)).attr("fill", "#fff300").attr("stroke", "#fff");
+      var eyeL = paper.circle(width/2 - 8, width/2 - 5, Math.floor(width/15)).attr('fill', '#fff');
+      var eyeR = paper.circle(width/2 + 8, width/2 - 5, Math.floor(width/15)).attr('fill', '#fff');
       var mouth = paper.path('M 16 335 a 20,20 0 0,0 16,0');
       this.data('mouth', mouth);
 
