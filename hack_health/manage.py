@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import os
 import sys
+import pywapi as weather
+
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hack_health.settings")

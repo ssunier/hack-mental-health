@@ -2,6 +2,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 #from django.core.validators import MinValueValidator, MaxValueValidator
+from django import forms
 
 # Create your models here.
 
@@ -51,4 +52,7 @@ class Person2Day(models.Model):
 
   def __str__(self):
     return str(person_id) + ': ' + str(date)
+
+class MoodForm(forms.Form):
+  mood_id = forms.IntegerField(('Mood'), required=True)
 
