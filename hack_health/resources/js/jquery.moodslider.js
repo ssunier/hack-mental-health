@@ -56,7 +56,7 @@
   var methods = {
     init: function(options) {
       var width=50;
-      this.css({height: width + 'px', width:'200px', background:'#eee', '-webkit-border-radius':'2em', position:'relative'});
+      this.css({height: width + 'px', width:'500px', background:'#eee', '-webkit-border-radius':'2em', position:'relative'});
       var smiley = $('<div class="moodslider-smiley"</div>');
       smiley.css({cursor:'pointer', width:width+'px',height:width+'px',position:'absolute'});
       this.append(smiley)

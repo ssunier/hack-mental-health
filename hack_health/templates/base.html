@@ -15,6 +15,7 @@
     {% block stylesheets %}
       <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link href="{% static 'css/bootstrap.min.css'%}" rel='stylesheet' type='text/css'>
     {% endblock %}
     {% block javascript %}
 
@@ -33,7 +34,12 @@
     {% block extrahead %}{% endblock %}
   </head>
   <body>
-    {% block content %}
+    {% block nav %}
+      {% include 'nav.html' %}
     {% endblock %}
+    <div class='container'>
+      {% block content %}
+      {% endblock %}
+    </div>
   </body>
 </html>
